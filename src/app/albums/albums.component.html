@@ -1,0 +1,11 @@
+<h2>Albums</h2>
+<form (submit)="addAlbum()">
+    <input type="text" name="titulo" placeholder="Album title" [(ngModel)]="title">
+    <input type="submit" value="Enviar">
+    <button (click)="cancelForm($event)">Cancelar</button>
+</form>
+<ul>
+    <li *ngFor="let item of albumsList">
+        <a href="albums/{{item.id}}">{{item.title}}</a>
+    </li>
+</ul>
