@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Post } from './post';
 
 @Component({
   selector: 'app-posts',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostsComponent implements OnInit {
 
+  selectedPost:Post;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSelectedPost(post) {
+    this.selectedPost = post;
   }
 
 }

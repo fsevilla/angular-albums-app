@@ -1,9 +1,9 @@
 <h2>Publicaciones</h2>
 <div class="panels">
     <div>
-        <app-post-list></app-post-list>
+        <app-post-list (selected)="onSelectedPost($event)"></app-post-list>
     </div>
     <div>
-        <app-post-details></app-post-details>
+        <app-post-details [item]="selectedPost"></app-post-details>
     </div>
 </div>

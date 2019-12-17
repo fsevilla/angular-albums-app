@@ -26,7 +26,7 @@ export class PostListComponent implements OnInit {
   }
 
   selectPost(post:Post) {
-    console.log('Seleccionado: ', post);
+    this.selected.emit(post);
   }
 
 }

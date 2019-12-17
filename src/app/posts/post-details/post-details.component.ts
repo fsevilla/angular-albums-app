@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-post-details',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostDetailsComponent implements OnInit {
 
+  @Input() item;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  ngOnChanges() {
+    console.log('New selected post', this.item);
   }
 
 }

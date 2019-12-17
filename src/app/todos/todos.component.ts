@@ -14,6 +14,7 @@ export class TodosComponent implements OnInit {
 
   todosList:Todo[];
   userId:number;
+  selectedTodo:Todo;
 
   constructor(
     private todoService:TodoService,
@@ -32,6 +33,10 @@ export class TodosComponent implements OnInit {
       .catch(err => {
         console.error(err);
       });
+  }
+
+  selectTodo(todo) {
+    this.selectedTodo = todo;
   }
 
 }

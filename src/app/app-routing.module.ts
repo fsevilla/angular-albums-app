@@ -10,8 +10,8 @@ import { TodosComponent } from './todos/todos.component';
 import { PostsComponent } from './posts/posts.component';
 
 const routes: Routes = [
-  // { path: '', component: HomeComponent },
-  { path: '', redirectTo: 'albums', pathMatch: 'full' },
+  { path: '', component: HomeComponent },
+  // { path: '', redirectTo: 'albums', pathMatch: 'full' },
   { path: 'users', component: UsersComponent },
   { path: 'users/:id', component: UserDetailsComponent, children: [
     { path: '', redirectTo: 'albums', pathMatch: 'full' },
