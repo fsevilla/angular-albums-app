@@ -1,46 +1,50 @@
-<h2>Datos del Usuario</h2>
-<div *ngIf="user">
-    <p>Nombre: {{user.name}}</p>
-    <p>Email: {{user.email}}</p>
-    <p>Username: {{user.username}}</p>
-    <p>
-        <a href="http://{{user.website}}" target="_new">http://{{user.website}}</a>
-    </p>
-</div>
-<a routerLink="..">&lt; Regresar</a>
+<div class="container">
+    <h2>Datos del Usuario</h2>
+    <a routerLink=".." class="btn btn-secondary float-right">&lt; Regresar</a>
 
-<!-- Tabs -->
-<div *ngIf="false">
-    <ul>
-        <li (click)="setCurrentTab('albums')">Albums</li>
-        <li (click)="setCurrentTab('tareas')">Tareas</li>
-        <li (click)="setCurrentTab('posts')">Posts</li>
-    </ul>
-    <div>
-        <div *ngIf="currentTab==='albums'">
-            
-            <app-albums></app-albums>
+    <div *ngIf="user">
+        <p>Nombre: {{user.name}}</p>
+        <p>Email: {{user.email}}</p>
+        <p>Username: {{user.username}}</p>
+        <p>
+            <a href="http://{{user.website}}" target="_new">http://{{user.website}}</a>
+        </p>
+    </div>
 
-        </div>
-        <div *ngIf="currentTab==='tareas'">
-            <app-todos></app-todos>
-        </div>
-        <div *ngIf="currentTab==='posts'">
-            contenido de posts
+    <!-- Tabs -->
+    <div *ngIf="false">
+        <ul>
+            <li (click)="setCurrentTab('albums')">Albums</li>
+            <li (click)="setCurrentTab('tareas')">Tareas</li>
+            <li (click)="setCurrentTab('posts')">Posts</li>
+        </ul>
+        <div>
+            <div *ngIf="currentTab==='albums'">
+                
+                <app-albums></app-albums>
+
+            </div>
+            <div *ngIf="currentTab==='tareas'">
+                <app-todos></app-todos>
+            </div>
+            <div *ngIf="currentTab==='posts'">
+                contenido de posts
+            </div>
         </div>
     </div>
-</div>
 
-<div>
-    <ul>
-        <li>
-            <a routerLink="albums">Albums</a>
+    <div>
+        
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+        <a class="nav-link active" routerLink="albums">Albums</a>
         </li>
-        <li>
-            <a routerLink="tareas">Tareas</a>
+        <li class="nav-item">
+        <a class="nav-link " routerLink="tareas">Tareas</a>
         </li>
     </ul>
-    <div>
-        <router-outlet></router-outlet>
+        <div>
+            <router-outlet></router-outlet>
+        </div>
     </div>
 </div>

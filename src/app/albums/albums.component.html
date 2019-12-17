@@ -1,11 +1,17 @@
-<h2>Albums</h2>
-<form *ngIf="!userId" (submit)="addAlbum()">
-    <input type="text" name="titulo" placeholder="Album title" [(ngModel)]="title">
-    <input type="submit" value="Enviar">
-    <button (click)="cancelForm($event)">Cancelar</button>
-</form>
-<ul>
-    <li *ngFor="let item of albumsList">
-        <a [routerLink]="albumPath + item.id">{{item.title}}</a>
-    </li>
-</ul>
+<div class="container">
+    <h2>Albums</h2>
+    <form *ngIf="!userId" (submit)="addAlbum()">
+        <div class="form-group">
+            <label for="titulo">Titulo</label>
+            <input class="form-control" type="text" name="titulo" placeholder="Album title" [(ngModel)]="title">
+        </div>
+
+        <input type="submit" value="Enviar" class="btn btn-primary">
+        <button (click)="cancelForm($event)" class="btn btn-default ml-2">Cancelar</button>
+    </form>
+    <ul class="mt-4">
+        <li *ngFor="let item of albumsList">
+            <a [routerLink]="albumPath + item.id">{{item.title}}</a>
+        </li>
+    </ul>
+</div>
