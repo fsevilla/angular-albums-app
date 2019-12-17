@@ -13,6 +13,9 @@ import { UsersComponent } from './users/users.component';
 import { UserDetailsComponent } from './users/user-details/user-details.component';
 import { HeaderComponent } from './common/components/header/header.component';
 import { TodosComponent } from './todos/todos.component';
+import { PostsComponent } from './posts/posts.component';
+import { PostListComponent } from './posts/post-list/post-list.component';
+import { PostDetailsComponent } from './posts/post-details/post-details.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { TodosComponent } from './todos/todos.component';
     UsersComponent,
     UserDetailsComponent,
     HeaderComponent,
-    TodosComponent
+    TodosComponent,
+    PostsComponent,
+    PostListComponent,
+    PostDetailsComponent
   ],
   imports: [
     BrowserModule,

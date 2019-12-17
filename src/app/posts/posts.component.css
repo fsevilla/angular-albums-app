@@ -1,0 +1,14 @@
+.panels {
+    width: 100%;
+}
+
+.panels > div {
+    float: left;
+    width: 50%;
+}
+
+.panels:after {
+    content: "";
+    display: table;
+    clear: both;
+}

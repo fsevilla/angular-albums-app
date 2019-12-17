@@ -10,7 +10,7 @@
 <a routerLink="..">&lt; Regresar</a>
 
 <!-- Tabs -->
-<div>
+<div *ngIf="false">
     <ul>
         <li (click)="setCurrentTab('albums')">Albums</li>
         <li (click)="setCurrentTab('tareas')">Tareas</li>
@@ -23,10 +23,24 @@
 
         </div>
         <div *ngIf="currentTab==='tareas'">
-            contenido de tareas
+            <app-todos></app-todos>
         </div>
         <div *ngIf="currentTab==='posts'">
             contenido de posts
         </div>
+    </div>
+</div>
+
+<div>
+    <ul>
+        <li>
+            <a routerLink="albums">Albums</a>
+        </li>
+        <li>
+            <a routerLink="tareas">Tareas</a>
+        </li>
+    </ul>
+    <div>
+        <router-outlet></router-outlet>
     </div>
 </div>

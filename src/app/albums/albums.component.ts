@@ -23,7 +23,7 @@ export class AlbumsComponent implements OnInit {
     private albumService:AlbumService,
     private activatedRoute:ActivatedRoute
   ) {
-    this.activatedRoute.params.subscribe(params => {
+    this.activatedRoute.parent.params.subscribe(params => {
       this.userId = params.id;
       if(this.userId) {
         this.albumPath = '/albums/';
