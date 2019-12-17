@@ -1,4 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
 import { AlbumService } from './album.service';
 import { Album } from './album';
 
@@ -13,17 +15,27 @@ export class AlbumsComponent implements OnInit {
 
   albumsList:Array<Album> = [];
 
+  userId:number;
+
+  albumPath:string = '';
+
   constructor(
-    private albumService:AlbumService
+    private albumService:AlbumService,
+    private activatedRoute:ActivatedRoute
   ) {
-    console.log('Album Service: ', this.albumService);
+    this.activatedRoute.params.subscribe(params => {
+      this.userId = params.id;
+      if(this.userId) {
+        this.albumPath = '/albums/';
+      }
+    })
   }
 
   ngOnInit() {
     // setTimeout(() => {
     //   this.addAlbum();
     // },3000);
-    this.albumService.getAlbums()
+    this.albumService.getAlbums(this.userId)
       .then(response => {
         this.albumsList = response;
       })

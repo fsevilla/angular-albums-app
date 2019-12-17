@@ -1,1 +1,5 @@
-<p>album-details works!</p>
+<h3 *ngIf="album">
+    Datos del album: {{album.title}}
+</h3>
+<p *ngIf="isLoading">Cargando...</p>
+<a routerLink="..">Regresar</a>

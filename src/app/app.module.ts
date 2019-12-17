@@ -9,6 +9,10 @@ import { AlbumsComponent } from './albums/albums.component';
 import { AlbumDetailsComponent } from './albums/album-details/album-details.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { UsersComponent } from './users/users.component';
+import { UserDetailsComponent } from './users/user-details/user-details.component';
+import { HeaderComponent } from './common/components/header/header.component';
+import { TodosComponent } from './todos/todos.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,11 @@ import { NotFoundComponent } from './not-found/not-found.component';
     AlbumsComponent,
     AlbumDetailsComponent,
     HomeComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    UsersComponent,
+    UserDetailsComponent,
+    HeaderComponent,
+    TodosComponent
   ],
   imports: [
     BrowserModule,
