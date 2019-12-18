@@ -2,6 +2,11 @@ table tr {
     border-bottom: solid 1px #c0c0c0;
 }
 
+table.datalist tr:first-child {
+    background-color: #333;
+    color: #fff;
+}
+
 table tr:nth-child(2n+1) {
     background-color: #ddd;
 }

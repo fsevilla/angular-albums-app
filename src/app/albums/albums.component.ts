@@ -22,6 +22,7 @@ export class AlbumsComponent implements OnInit {
       { name: 'Usuario', property: 'userId' },
       { name: 'Titulo', property: 'title' }
     ],
+    basePath: '',
     idField: 'id',
     rowActions: true
   };

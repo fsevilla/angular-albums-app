@@ -1,6 +1,6 @@
 <input (keyup)="filter($event.target.value)" class="form-control mt-4 mb-4" type="text" placeholder="Buscar..." name="search">
 
-<table>
+<table class="datalist">
     <tr>
         <th *ngFor="let col of settings.columns">{{col.name}}</th>
         <th *ngIf="hasActions()">Acciones</th>
