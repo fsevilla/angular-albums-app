@@ -11,6 +11,15 @@ export class UsersComponent implements OnInit {
 
   usersList:Array<User>;
 
+  settings = {
+    columns: [
+      { name: 'Nombre', property: 'name' },
+      { name: 'Email', property: 'email' }
+    ],
+    idField: 'id',
+    rowActions: true
+  }
+
   constructor(private userService:UserService) { }
 
   ngOnInit() {

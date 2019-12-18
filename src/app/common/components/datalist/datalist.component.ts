@@ -19,4 +19,8 @@ export class DatalistComponent implements OnInit {
     return typeof value === 'boolean';
   }
 
+  hasActions() {
+    return typeof this.settings.rowActions !== 'undefined';
+  }
+
 }

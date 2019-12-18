@@ -19,6 +19,15 @@ export class AlbumsComponent implements OnInit {
 
   albumPath:string = '';
 
+  settings = {
+    columns: [
+      { name: 'Usuario', property: 'userId' },
+      { name: 'Titulo', property: 'title' }
+    ],
+    idField: 'id',
+    rowActions: true
+  };
+
   constructor(
     private albumService:AlbumService,
     private activatedRoute:ActivatedRoute

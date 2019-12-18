@@ -1,11 +1,5 @@
 <div class="container">
     <h2>Usuarios</h2>
 
-    <ul>
-        <li *ngFor="let user of usersList">
-            <a [routerLink]="user.id">
-                {{user.name}} ({{user.email}})
-            </a>
-        </li>
-    </ul>
+    <app-datalist [data]="usersList" [settings]="settings"></app-datalist>
 </div>

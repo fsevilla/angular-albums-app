@@ -11,6 +11,16 @@ export class PostListComponent implements OnInit {
 
   postsList:Post[];
 
+  settings = {
+    columns: [
+      { name: 'Titulo', property: 'title' },
+      { name: 'Usuario', property: 'userId' }
+    ],
+    onRowClick: (row) => {
+      this.selectPost(row);
+    }
+  }
+
   @Output() selected = new EventEmitter<Post>();
 
   constructor(private postService:PostService) { }

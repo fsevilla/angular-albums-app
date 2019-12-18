@@ -1,6 +1,7 @@
 <table>
     <tr>
         <th *ngFor="let col of settings.columns">{{col.name}}</th>
+        <th *ngIf="hasActions()">Acciones</th>
     </tr>
     <tr *ngFor="let row of data">
         <td *ngFor="let col of settings.columns" (click)="settings.onRowClick ? settings.onRowClick(row) : null">
@@ -11,6 +12,9 @@
                 <span *ngIf="!isBoolean(row[col.property])">{{row[col.property]}}</span>
                 <span *ngIf="isBoolean(row[col.property])">{{row[col.property] ? 'Si' : 'No'}}</span>
             </ng-container>
+        </td>
+        <td *ngIf="hasActions()">
+            <a [routerLink]="row[settings.idField]">Ver detalles</a>
         </td>
     </tr>
 </table>

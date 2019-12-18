@@ -9,9 +9,5 @@
         <input type="submit" value="Enviar" class="btn btn-primary">
         <button (click)="cancelForm($event)" class="btn btn-default ml-2">Cancelar</button>
     </form>
-    <ul class="mt-4">
-        <li *ngFor="let item of albumsList">
-            <a [routerLink]="albumPath + item.id">{{item.title}}</a>
-        </li>
-    </ul>
+    <app-datalist [data]="albumsList" [settings]="settings"></app-datalist>
 </div>
