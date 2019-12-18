@@ -1,9 +1,11 @@
+<input (keyup)="filter($event.target.value)" class="form-control mt-4 mb-4" type="text" placeholder="Buscar..." name="search">
+
 <table>
     <tr>
         <th *ngFor="let col of settings.columns">{{col.name}}</th>
         <th *ngIf="hasActions()">Acciones</th>
     </tr>
-    <tr *ngFor="let row of data">
+    <tr *ngFor="let row of filteredData">
         <td *ngFor="let col of settings.columns" (click)="settings.onRowClick ? settings.onRowClick(row) : null">
             <ng-container *ngIf="col.prep">
                 {{col.prep(row)}}
@@ -14,7 +16,7 @@
             </ng-container>
         </td>
         <td *ngIf="hasActions()">
-            <a [routerLink]="row[settings.idField]">Ver detalles</a>
+            <a [routerLink]="getDetailsPath(row)">Ver detalles</a>
         </td>
     </tr>
 </table>

@@ -17,8 +17,6 @@ export class AlbumsComponent implements OnInit {
 
   userId:number;
 
-  albumPath:string = '';
-
   settings = {
     columns: [
       { name: 'Usuario', property: 'userId' },
@@ -35,7 +33,7 @@ export class AlbumsComponent implements OnInit {
     this.activatedRoute.parent.params.subscribe(params => {
       this.userId = params.id;
       if(this.userId) {
-        this.albumPath = '/albums/';
+        this.settings.basePath = '/albums/';
       }
     })
   }
