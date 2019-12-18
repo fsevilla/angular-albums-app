@@ -1,0 +1,11 @@
+table tr {
+    border-bottom: solid 1px #c0c0c0;
+}
+
+table tr:nth-child(2n+1) {
+    background-color: #ddd;
+}
+
+table th, table td {
+    padding: 5px 10px;
+}

@@ -1,0 +1,16 @@
+<table>
+    <tr>
+        <th *ngFor="let col of settings.columns">{{col.name}}</th>
+    </tr>
+    <tr *ngFor="let row of data">
+        <td *ngFor="let col of settings.columns" (click)="settings.onRowClick ? settings.onRowClick(row) : null">
+            <ng-container *ngIf="col.prep">
+                {{col.prep(row)}}
+            </ng-container>
+            <ng-container *ngIf="!col.prep">
+                <span *ngIf="!isBoolean(row[col.property])">{{row[col.property]}}</span>
+                <span *ngIf="isBoolean(row[col.property])">{{row[col.property] ? 'Si' : 'No'}}</span>
+            </ng-container>
+        </td>
+    </tr>
+</table>

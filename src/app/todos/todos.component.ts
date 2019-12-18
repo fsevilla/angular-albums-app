@@ -16,6 +16,25 @@ export class TodosComponent implements OnInit {
   userId:number;
   selectedTodo:Todo;
 
+  settings = {
+    columns: [
+      { name: 'Usuario', property: 'userId' },
+      { name: 'Tarea', property: 'title' },
+      { name: 'Completado', property: 'completed' },
+      { name: 'Estatus', prep: (row) => {
+        if(row.completed) {
+            return 'Completo';
+          } else {
+            return 'Pendiente';
+          }
+        }
+      }
+    ],
+    onRowClick: (row) => {
+      this.selectedTodo = row;
+    }
+  }
+
   constructor(
     private todoService:TodoService,
     private activatedRoute:ActivatedRoute
@@ -33,10 +52,6 @@ export class TodosComponent implements OnInit {
       .catch(err => {
         console.error(err);
       });
-  }
-
-  selectTodo(todo) {
-    this.selectedTodo = todo;
   }
 
 }

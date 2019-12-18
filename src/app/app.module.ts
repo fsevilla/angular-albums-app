@@ -17,6 +17,7 @@ import { PostsComponent } from './posts/posts.component';
 import { PostListComponent } from './posts/post-list/post-list.component';
 import { PostDetailsComponent } from './posts/post-details/post-details.component';
 import { TodoDetailsComponent } from './todos/todo-details/todo-details.component';
+import { DatalistComponent } from './common/components/datalist/datalist.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { TodoDetailsComponent } from './todos/todo-details/todo-details.componen
     PostsComponent,
     PostListComponent,
     PostDetailsComponent,
-    TodoDetailsComponent
+    TodoDetailsComponent,
+    DatalistComponent
   ],
   imports: [
     BrowserModule,
