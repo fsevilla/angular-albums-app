@@ -30,7 +30,7 @@ export class UserDetailsComponent implements OnInit {
   }
 
   getDetails() {
-    this.userService.getUserDetails(this.userId)
+    this.userService.getDetails(this.userId)
       .then(response => {
         this.user = response;
       })

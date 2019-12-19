@@ -1,21 +1,13 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 
 import { environment } from './../../environments/environment';
+import { CrudService } from '../common/services/crud.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class UserService extends CrudService {
 
-  constructor(private httpClient:HttpClient) { }
-
-  getUsers():Promise<any> {
-    return this.httpClient.get(environment.apiUrl+'users').toPromise();
-  }
-
-  getUserDetails(id:number):Promise<any> {
-    return this.httpClient.get(`${environment.apiUrl}users/${id}`).toPromise();
-  }
+  endpoint = 'users';
 
 }

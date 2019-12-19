@@ -31,7 +31,7 @@ export class AlbumDetailsComponent implements OnInit {
 
   getDetails() {
     this.isLoading = true;
-    this.albumService.getAlbumDetails(this.albumId)
+    this.albumService.getDetails(this.albumId)
       .then(response => {
         console.log('Respuesta:', response);
         this.album = response;
